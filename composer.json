@@ -3,10 +3,8 @@
     "description": "Laravel Provider for mrprompt/Cielo",
     "type": "library",
     "version": "1.0.0",
-    "require": {},
     "require-dev": {
-        "orchestra/testbench": "^7.0",
-        "mockery/mockery": "^1.5"
+        "orchestra/testbench": "^10.1"
     },
     "keywords": [
         "api",
@@ -29,9 +27,30 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "MrPrompt\\CieloLaravel\\Tests\\": "tests/"
+            "MrPrompt\\CieloLaravel\\Tests\\": "tests/",
+            "Workbench\\App\\": "workbench/app/",
+            "Workbench\\Database\\Factories\\": "workbench/database/factories/",
+            "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            "@clear",
+            "@prepare"
+        ],
+        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": "@php vendor/bin/testbench workbench:build --ansi",
+        "serve": [
+            "Composer\\Config::disableProcessTimeout",
+            "@build",
+            "@php vendor/bin/testbench serve --ansi"
+        ],
+        "test": [
+            "@clear",
+            "@php vendor/bin/phpunit"
+        ]
+    }
 }
