@@ -21,12 +21,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "MrPrompt\\CieloLaravel\\": "src"
+            "MrPrompt\\Cielo\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "MrPrompt\\CieloLaravel\\Tests\\": "tests/",
+            "MrPrompt\\Cielo\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/",
             "Workbench\\Database\\Factories\\": "workbench/database/factories/",
             "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"

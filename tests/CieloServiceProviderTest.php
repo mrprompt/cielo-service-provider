@@ -1,9 +1,9 @@
 <?php
 
-namespace MrPrompt\CieloLaravel\Tests;
+namespace MrPrompt\Cielo\Tests;
 
 use Orchestra\Testbench\TestCase;
-use MrPrompt\CieloLaravel\CieloServiceProvider;
+use MrPrompt\Cielo\CieloServiceProvider;
 
 class CieloServiceProviderTest extends TestCase
 {

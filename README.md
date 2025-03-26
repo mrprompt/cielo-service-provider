@@ -24,7 +24,7 @@ Incluir o código abaixo na posição `providers` no arquivo `config/app.php`
          */
 
         // Cielo
-        MrPrompt\CieloLaravel\CieloServiceProvider::class,
+        MrPrompt\Cielo\CieloServiceProvider::class,
 
     (...)
 
@@ -58,7 +58,7 @@ Incluir o código abaixo em `bootstrap/app.php`:
 (...)
 
 $app->configure('cielo');
-$app->register(MrPrompt\CieloLaravel\CieloServiceProvider::class);
+$app->register(MrPrompt\Cielo\CieloServiceProvider::class);
 
 (...)
 ```

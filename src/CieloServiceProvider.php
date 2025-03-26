@@ -1,8 +1,7 @@
 <?php
 
-namespace MrPrompt\CieloLaravel;
+namespace MrPrompt\Cielo;
 
-use MrPrompt\Cielo\Cielo;
 use Illuminate\Support\ServiceProvider;
 
 class CieloServiceProvider extends ServiceProvider
@@ -28,7 +27,6 @@ class CieloServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('cielo', function ($app) {
-            // return new Cielo(config('cielo.merchant_id'), config('cielo.merchant_key'), config('cielo.environment'));
             return new \stdClass;
         });
     }
