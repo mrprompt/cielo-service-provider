@@ -1,5 +1,7 @@
 # Provider Laravel para API Cielo
 
+[![Tests](https://github.com/mrprompt/cielo-service-provider/actions/workflows/tests.yml/badge.svg)](https://github.com/mrprompt/cielo-service-provider/actions/workflows/tests.yml)
+
 ## Descrição
 
 ## Instalação
