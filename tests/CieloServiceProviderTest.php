@@ -39,10 +39,6 @@ class CieloServiceProviderTest extends TestCase
      */
     public function testCieloBindingIsRegistered()
     {
-        config()->set('cielo.merchant_id', 'test-merchant-id');
-        config()->set('cielo.merchant_key', 'test-merchant-key');
-        config()->set('cielo.environment', 'sandbox');
-
         $this->assertInstanceOf(\MrPrompt\Cielo\Infra\HttpDriver::class, $this->app->make('cielo.driver'));
         $this->assertInstanceOf(\MrPrompt\Cielo\Recursos\Bin\Consulta::class, $this->app->make('cielo.cartao.consulta.bin'));
         $this->assertInstanceOf(\MrPrompt\Cielo\Recursos\Cartao\CancelamentoMerchantOrderId::class, $this->app->make('cielo.cartao.cancelamento.ordem'));
