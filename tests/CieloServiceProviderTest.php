@@ -39,19 +39,19 @@ class CieloServiceProviderTest extends TestCase
      */
     public function testCieloBindingIsRegistered()
     {
-        $merchantId = 'test-merchant-id';
-        $merchantKey = 'test-merchant-key';
-        $environment = 'sandbox';
+        config()->set('cielo.merchant_id', 'test-merchant-id');
+        config()->set('cielo.merchant_key', 'test-merchant-key');
+        config()->set('cielo.environment', 'sandbox');
 
-        config()->set('cielo.merchant_id', $merchantId);
-        config()->set('cielo.merchant_key', $merchantKey);
-        config()->set('cielo.environment', $environment);
-
-        $cielo = $this->app->make('cielo');
-
-        $this->assertInstanceOf(\stdClass::class, $cielo);
-        // $this->assertEquals($merchantId, $cielo->getMerchantId());
-        // $this->assertEquals($merchantKey, $cielo->getMerchantKey());
-        // $this->assertEquals($environment, $cielo->getEnvironment());
+        $this->assertInstanceOf(\MrPrompt\Cielo\Infra\HttpDriver::class, $this->app->make('cielo.driver'));
+        $this->assertInstanceOf(\MrPrompt\Cielo\Recursos\Bin\Consulta::class, $this->app->make('cielo.cartao.consulta.bin'));
+        $this->assertInstanceOf(\MrPrompt\Cielo\Recursos\Cartao\CancelamentoMerchantOrderId::class, $this->app->make('cielo.cartao.cancelamento.ordem'));
+        $this->assertInstanceOf(\MrPrompt\Cielo\Recursos\Cartao\CancelamentoPaymentId::class, $this->app->make('cielo.cartao.cancelamento.pagamento'));
+        $this->assertInstanceOf(\MrPrompt\Cielo\Recursos\Cartao\Captura::class, $this->app->make('cielo.cartao.captura'));
+        $this->assertInstanceOf(\MrPrompt\Cielo\Recursos\Cartao\Pagamento::class, $this->app->make('cielo.cartao.pagamento'));
+        $this->assertInstanceOf(\MrPrompt\Cielo\Recursos\Tokenizacao\Cartao::class, $this->app->make('cielo.tokenizacao.cartao'));
+        $this->assertInstanceOf(\MrPrompt\Cielo\Recursos\ZeroAuth\Cartao::class, $this->app->make('cielo.zeroauth.cartao'));
+        $this->assertInstanceOf(\MrPrompt\Cielo\Recursos\ZeroAuth\Carteira::class, $this->app->make('cielo.zeroauth.carteira'));
+        $this->assertInstanceOf(\MrPrompt\Cielo\Recursos\ZeroAuth\Token::class, $this->app->make('cielo.zeroauth.token'));
     }
 }
