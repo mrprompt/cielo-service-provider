@@ -54,14 +54,5 @@
             "@clear",
             "@php vendor/bin/phpunit"
         ]
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:mrprompt/cielo-v4.git",
-            "only": [
-                "mrprompt/cielo"
-            ]
-        }
-    ]
+    }
 }
