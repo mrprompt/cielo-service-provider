@@ -8,10 +8,13 @@ use MrPrompt\Cielo\Enum\Ambiente\Ambiente;
 use MrPrompt\Cielo\Infra\Autenticacao;
 use MrPrompt\Cielo\Infra\HttpDriver;
 use MrPrompt\Cielo\Recursos\Bin\Consulta as ConsultaBin;
+use MrPrompt\Cielo\Recursos\Boleto\Pagamento as PagamentoBoleto;
 use MrPrompt\Cielo\Recursos\Cartao\CancelamentoMerchantOrderId;
 use MrPrompt\Cielo\Recursos\Cartao\CancelamentoPaymentId;
 use MrPrompt\Cielo\Recursos\Cartao\Captura;
 use MrPrompt\Cielo\Recursos\Cartao\Pagamento;
+use MrPrompt\Cielo\Recursos\Pix\Pagamento as PagamentoPix;
+use MrPrompt\Cielo\Recursos\Pix\Devolucao as DevolucaoPix;
 use MrPrompt\Cielo\Recursos\Tokenizacao\Cartao as TokenizacaoCartao;
 use MrPrompt\Cielo\Recursos\ZeroAuth\Cartao as ZeroAuthCartao;
 use MrPrompt\Cielo\Recursos\ZeroAuth\Carteira as ZeroAuthCarteira;
@@ -81,6 +84,18 @@ class CieloServiceProvider extends ServiceProvider
 
         $this->app->bind('cielo.zeroauth.token', function($app) {
             return new ZeroAuthToken($this->app->get('cielo.driver'));
+        });
+
+        $this->app->bind('cielo.boleto.pagamento', function($app) {
+            return new PagamentoBoleto($this->app->get('cielo.driver'));
+        });
+
+        $this->app->bind('cielo.pix.pagamento', function($app) {
+            return new PagamentoPix($this->app->get('cielo.driver'));
+        });
+
+        $this->app->bind('cielo.pix.devolucao', function($app) {
+            return new DevolucaoPix($this->app->get('cielo.driver'));
         });
     }
 }

@@ -337,12 +337,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mrprompt/Cielo.git",
-                "reference": "b2c04826483283b6794025fcafd95eb93b62f421"
+                "reference": "8501fd1c600e049fe76351341b1d191fb0211b03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mrprompt/Cielo/zipball/b2c04826483283b6794025fcafd95eb93b62f421",
-                "reference": "b2c04826483283b6794025fcafd95eb93b62f421",
+                "url": "https://api.github.com/repos/mrprompt/Cielo/zipball/8501fd1c600e049fe76351341b1d191fb0211b03",
+                "reference": "8501fd1c600e049fe76351341b1d191fb0211b03",
                 "shasum": ""
             },
             "require": {
@@ -379,9 +379,7 @@
                 "cartão",
                 "cielo",
                 "credit",
-                "credito",
                 "debit",
-                "debito",
                 "gateway",
                 "payment",
                 "pix",
@@ -390,7 +388,7 @@
             "support": {
                 "source": "https://github.com/mrprompt/Cielo/tree/feat/version-4"
             },
-            "time": "2025-04-04T04:08:28+00:00"
+            "time": "2025-04-04T07:00:34+00:00"
         },
         {
             "name": "psr/http-client",
