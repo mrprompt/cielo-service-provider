@@ -4,7 +4,7 @@ namespace MrPrompt\Cielo;
 
 use GuzzleHttp\Client;
 use Illuminate\Support\ServiceProvider;
-use MrPrompt\Cielo\Infra\Ambiente;
+use MrPrompt\Cielo\Enum\Ambiente\Ambiente;
 use MrPrompt\Cielo\Infra\Autenticacao;
 use MrPrompt\Cielo\Infra\HttpDriver;
 use MrPrompt\Cielo\Recursos\Bin\Consulta as ConsultaBin;
@@ -41,7 +41,7 @@ class CieloServiceProvider extends ServiceProvider
     {
         $this->app->bind('cielo.driver', function ($app) {
             $client = new Client;
-            $ambiente = new Ambiente(config('cielo.environment'));
+            $ambiente = Ambiente::match(config('cielo.environment'));
             $autenticacao = new Autenticacao(config('cielo.merchant_id'), config('cielo.merchant_key'));
             
             return new HttpDriver($ambiente, $client, $autenticacao);

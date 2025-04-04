@@ -337,12 +337,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mrprompt/Cielo.git",
-                "reference": "46d3cc0c1c9205f08fc92c5eaadf24fe1f1d33de"
+                "reference": "b2c04826483283b6794025fcafd95eb93b62f421"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mrprompt/Cielo/zipball/46d3cc0c1c9205f08fc92c5eaadf24fe1f1d33de",
-                "reference": "46d3cc0c1c9205f08fc92c5eaadf24fe1f1d33de",
+                "url": "https://api.github.com/repos/mrprompt/Cielo/zipball/b2c04826483283b6794025fcafd95eb93b62f421",
+                "reference": "b2c04826483283b6794025fcafd95eb93b62f421",
                 "shasum": ""
             },
             "require": {
@@ -390,7 +390,7 @@
             "support": {
                 "source": "https://github.com/mrprompt/Cielo/tree/feat/version-4"
             },
-            "time": "2025-04-03T19:04:34+00:00"
+            "time": "2025-04-04T04:08:28+00:00"
         },
         {
             "name": "psr/http-client",
