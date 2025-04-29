@@ -3,7 +3,7 @@
     "description": "Laravel Provider for mrprompt/Cielo",
     "type": "library",
     "require": {
-        "mrprompt/cielo": "dev-feat/version-4"
+        "mrprompt/cielo": "^4.0"
     },
     "require-dev": {
         "orchestra/testbench": "^10.1"
@@ -35,7 +35,7 @@
             "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "scripts": {
         "post-autoload-dump": [
