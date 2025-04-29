@@ -6,7 +6,7 @@
 
 ## Instalação
 
-Via Composer: `composer require mrprompt/cielo-laravel`
+Via Composer: `composer require mrprompt/cielo-laravel-provider`
 
 ### Laravel
 
